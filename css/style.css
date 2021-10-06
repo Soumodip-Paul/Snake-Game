@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -5,33 +7,81 @@
 
 .body {
 
-    background-image: linear-gradient(greenyellow, yellowgreen);
+    background: linear-gradient(lightgreen, #77b255);
+    background-size: contain;
     min-height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
 }
 
 #board {
 
-    background: linear-gradient(white,lightgrey);
-    height: 92vmin;
+    background: #eee;
+    height: 90vmin;
     width: 90vmin;
-    border: 2px solid #000;
+    border: 1px solid #000;
     display: grid;
-    grid-template-rows: repeat(50,1fr);
-    grid-template-columns: repeat(50,1fr);
+    grid-template-rows: repeat(60,1fr);
+    grid-template-columns: repeat(60,1fr);
+    z-index: 0;
+    overflow: hidden;
+    border-radius: 1rem;
 }
 
 .head {
-    background-color: red!important;
-    border-radius: 50%;
+    background: linear-gradient(red , purple) !important;
+    border: .25vmin solid purple !important;
+    border-radius: 5px;
+    z-index: 3 !important;
 }
 .snake {
-    background-color: yellow;
+    background-color: purple;
+    border-radius: 12px;
+    border: .25vmin solid #eee;
+    z-index: 2;
 }
 
 .food {
-    background: linear-gradient(purple,red);
-    border-radius: 100vh;
+    background: linear-gradient(orange,red);
+    border-radius: 100%;
+    position: relative;
+    z-index: 0;
+}
+.food::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 40%;
+    border-radius: 1rem;
+    margin-left: -3px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: darkgreen darkgreen transparent transparent  ;
+}
+
+#scoreBoard {
+    align-self: flex-start;
+    width: 50vmin;
+    color: #eee;
+}
+.score {
+    margin-top: 20vmin;
+    font-size: 24px;
+    font-family: 'Roboto', serif;
+}
+
+@media only screen and (max-width: 400px) {
+    .body {
+        flex-direction: column !important;
+        justify-content: flex-start;
+    }
+     #scoreBoard {
+        width: 100vw;
+     }
+     .score {
+        font-size: 18px;
+        margin: 10vmin 10px;
+    }
 }
