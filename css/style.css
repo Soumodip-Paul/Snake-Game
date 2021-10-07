@@ -5,7 +5,7 @@
     margin: 0;
 }
 
-.body {
+body {
 
     background: linear-gradient(lightgreen, #77b255);
     background-size: contain;
@@ -58,7 +58,7 @@
     margin-left: -3px;
     border-width: 3px;
     border-style: solid;
-    border-color: darkgreen darkgreen transparent transparent  ;
+    border-color: transparent transparent darkgreen darkgreen  ;
 }
 
 #scoreBoard {
@@ -73,7 +73,7 @@
 }
 
 @media only screen and (max-width: 400px) {
-    .body {
+    body {
         flex-direction: column !important;
         justify-content: flex-start;
     }
