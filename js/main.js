@@ -31,7 +31,7 @@ function gameEngine() {
         if (i !== 0 && snakeArray[0].x === e.x && snakeArray[0].y === e.y) {
             alert(`Game over your score is ${score}`)
             snakeArray = [{x: 7, y: 5},{x:7,y:4}];
-            food = {x : generateRnadom(b,a), y: generateRnadom(b,a)}
+            food = {x : generateRandom(b,a), y: generateRandom(b,a)}
             movingDirection = {x:0,y:1} 
             setScore(0)
         }
@@ -66,10 +66,10 @@ function gameEngine() {
 function snakeHaveEatenFood(sarr) { 
     sarr.unshift({x : sarr[0].x + movingDirection.x, y: sarr[0].y + movingDirection.y})
     setScore(speed + 5)    
-    food = {x: generateRnadom(b,a), y: generateRnadom(b,a)}
+    food = {x: generateRandom(b,a), y: generateRandom(b,a)}
 }
 
-function generateRnadom(max,min) { 
+function generateRandom(max,min) { 
     return Math.round(min + (max - min ) * Math.random())
 }
 
@@ -84,6 +84,7 @@ function setScore(sc) {
 // requestId =  window.requestAnimationFrame(loop)
 drawSnakeAndFood()
 
+// function to draw the snake and the food
 function drawSnakeAndFood() {
     board.innerHTML = ''
 
